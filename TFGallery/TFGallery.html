@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+
+body {
+    font-family: euro;
+    background-color: #414141;
+    color:#e9e9da;
+}
+.heading{
+    font-family: Varta;
+    font-size: 64px;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1300px;
+    position: relative;
+}
+.setOfImages{
+    position: relative;
+    height: 300px;
+    display: inline-block;
+    margin: 0 auto;
+}
+.discrip{
+    position: absolute;
+    right: -300px;
+}
+.owl-item{ 
+    position: relative;
+}
+.item{
+  filter: brightness(40%);
+  transition:.4s ease all;
+  transform:scale(0.71);
+  overflow: hidden;
+}
+@media(max-width:1000px){
+  .item{margin:0; transform:scale(.75)}
+}
+.active.center .item{
+  filter: brightness(100%);
+  transform:scale(1);
+  height: 400px;
+} 
+.owl-item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: rotate(360deg); 
+}
+.discrip{
+    transition:.4s ease all;
+}
+#emptySpan{
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #e9e9da;
+    z-index: 1;
+    transition: 0.4 ease all;
+    /* opacity: 40%; */
+}
+.toggle{
+    position: absolute;
+    font-family: IBM Plex Sans;
+    font-weight: 300;
+    line-height: 31.2px;
+    font-size: 26px;
+    padding-bottom: 20px;
+    opacity: 50%;
+    z-index: 2;
+    cursor: pointer;
+}
+.toggle:hover{
+    text-decoration: underline;
+}
+#tag2, #tag4, #tag6{
+    right: 0px;
+}
+.toggle.active{
+    opacity: 100%;
+}
+/* .tfimg{
+    border: 3px solid #e9e9da;
+} */
+
+.owl-controls{position:absolute; margin-top:300px;}
+
+</style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <br><br><br><br><br><br>
+
+        <div>
+            <h1 class="heading">Gallery</h1>
+        </div>
+
+        <br>
+
+        <div class="owl-carousel owl-theme owl-stage owl1 setOfImages" id="collectionOfImgs">
+            <div class="item"><img id="im1" class="tfimg" src="img/l1.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/l2.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/l3.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/l4.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/l5.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/l6.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/l7.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/l8.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/l9.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/l10.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-stage owl2 setOfImages" id="collectionOfImgs2">
+            <div class="item"><img id="im1" class="tfimg" src="img/O1.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/O2.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/O3.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/O4.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/O5.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/O6.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/O7.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/O8.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/O9.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/O10.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-stage owl3 setOfImages" id="collectionOfImgs3">
+            <div class="item"><img id="im1" class="tfimg" src="img/e1.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/e2.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/e3.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/e4.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/e5.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/e6.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/e7.jpeg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/e8.jpeg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/e9.jpeg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/e10.jpeg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-stage owl4 setOfImages" id="collectionOfImgs4">
+            <div class="item"><img id="im1" class="tfimg" src="img/R1.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/R2.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/R3.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/R4.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/R5.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/R6.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/R7.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/R8.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/R9.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/R10.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-stage owl5 setOfImages" id="collectionOfImgs5">
+            <div class="item"><img id="im1" class="tfimg" src="img/c1.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/c2.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/c3.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/c4.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/c5.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/c6.jfif" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/c7.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/C8.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-stage owl6 setOfImages" id="collectionOfImgs6">
+            <div class="item"><img id="im1" class="tfimg" src="img/T1.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/T2.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/T3.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/T4.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/T5.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+            <div class="item"><img id="im1" class="tfimg" src="img/T6.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">APJ Abdul Kalam</h2> <br><br> <p class="discrip">Former President of India</p> </div>
+            <div class="item"><img id="im2" class="tfimg" src="img/T7.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Andrew NG</h2> <br><br> <p class="discrip">Co-founder of Coursera</p> </div>
+            <div class="item"><img id="im3" class="tfimg" src="img/T8.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Amartya Sen</h2> <br><br> <p class="discrip">Nobel Prize in Economics, 1998</p> </div>
+            <div class="item"><img id="im4" class="tfimg" src="img/T9.jpg" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Pranab Mukherjee</h2> <br><br> <p class="discrip">13th President of India</p> </div>
+            <div class="item"><img id="im5" class="tfimg" src="img/T10.png" alt="img thumb 1" width="431" height="287">  <br> <h2 class="discrip">Dalai Lama</h2> <br><br> <p class="discrip">Nobel Peace Prize 1989</p> </div>
+        </div>
+
+
+        <span id='emptySpan' class="Boundary"></span>
+
+        <p class="toggle active" id='tag1' onclick="myFunction(event,'Lectures')">Lectures</p>        
+        <p class="toggle" id='tag2' onclick="myFunction(event,'Ozone')">Ozone</p>   <br><br>
+        <p class="toggle" id='tag3' onclick="myFunction(event,'Exhibitions')">Exhibitions</p>
+        <p class="toggle" id='tag4' onclick="myFunction(event,'Robowars')">Robowars</p>    <br><br>
+        <p class="toggle" id='tag5' onclick="myFunction(event,'Competitions')">Competitions</p>
+        <p class="toggle" id='tag6' onclick="myFunction(event,'Technoholix')">Technoholix</p> <br><br>
+    </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+//-----------ECCENTIAL-ONE-TIME----------------------------------------
+
+//Variables
+var emptySpanVar = 'emptySpan';
+var collectionOfImgsVar = 'collectionOfImgs';
+var noOfImgs = 10;
+var highlightSize = {
+    'width':431, 'height':287
+}
+//var owl = $('.owl-carousel');
+var owl = $('.owl1');
+var owlDict = [$('.owl1'), $('.owl2'), $('.owl3'), $('.owl4'), $('.owl5'), $('.owl6')];
+
+function detectMouseWheelDirection( e )
+{
+    var delta = null, direction = false;
+    if ( !e ) { // if the event is not provided, we get it from the window object
+        e = window.event;
+    }
+    if ( e.wheelDelta ) { // will work in most cases
+        delta = e.wheelDelta / 60;
+    } else if ( e.detail ) { // fallback for Firefox
+        delta = -e.detail / 2;
+    }
+    if ( delta !== null ) {
+        direction = delta > 0 ? 'up' : 'down';
+    }
+    e.preventDefault();
+    return direction;
+}
+
+function getChildrenOfSameNameOfParent(classNameParent ,classNameChildren){
+    var doc = document.getElementsByClassName(classNameParent)[0];  //Pay attention in future 
+    var notes = [];
+    for (var i = 0; i < doc.childNodes.length; i++) {
+        if (doc.childNodes[i].className == classNameChildren) {
+        notes.push(doc.childNodes[i]);
+        }       
+    }
+    return notes;
+}
+
+function getChildrenOfChildOfGivenClassName(classNameParent ,classNameChildren){
+    var doc1 = document.getElementsByClassName(classNameParent)[0];  //Pay attention in future
+    var doc = doc1.childNodes[0];
+    var notes = [];
+    for (var i = 0; i < doc.childNodes.length; i++) {
+        if (doc.childNodes[i].className == classNameChildren) {
+        notes.push(doc.childNodes[i]);
+        }       
+    }
+    return notes;
+}
+
+function resetParas(){
+    var cnt=0;
+    var paraLstLst = document.getElementsByClassName('discrip');
+    while(cnt<paraLstLst.length){
+        var paras = paraLstLst[cnt];
+        var shiftLength = paras.clientWidth;
+        paras.style.right = `-${shiftLength}px`;
+        cnt++;
+    }
+}
+
+function TextIn(){
+    var paras = getChildrenOfChildOfGivenClassName('active center','discrip');
+    for(var i=0;i<paras.length;i++){
+        paras[i].style.right = `0px`;    //start from its current position
+    }
+}
+
+function TextOut(){
+    var paras = getChildrenOfChildOfGivenClassName('active center','discrip');
+    var shiftLength = Math.max(paras[0].clientWidth,paras[1].clientWidth);
+    for(var i=0;i<paras.length;i++){
+        paras[i].style.right = `-${shiftLength}px`;     //start from its current position
+    }
+}
+
+async function owlInit(owl){
+    owl.owlCarousel({
+        loop:true,
+        center: true,
+        margin:0,
+        nav:false,  //true
+        dots: false,
+        // autoplay: true,
+        // autoplayTimeout: 2000,
+        //stagePadding: 50,
+        responsive:{
+            0:{
+                items:3
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:3
+            }
+        }
+    });
+}
+
+for(var i=0;i<owlDict.length;i++){
+    var owl = owlDict[i];
+
+    owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.originalEvent.deltaY>0) {   //e.deltaY
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
+
+    owl.on('DOMMouseScroll','.owl-stage',function(e){
+        if (e.originalEvent.detail > 0){
+            owl.trigger('next.owl');
+        } 
+        else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    }); 
+}
+
+
+mainFunction('Lectures');
+
+//---------END-OF--------ECCENTIAL-ONE-TIME----------------------------------------
+
+function makeAllNone(){
+    var owls = document.getElementsByClassName('owl-carousel');
+    for(var i=0;i<owls.length;i++){
+        owls[i].style.display = 'none';
+    }
+}
+
+function mainFunction(str){
+    if(str == 'Lectures'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs';
+        noOfImgs = 10;
+        owl = $('.owl1');
+    }
+    if(str == 'Ozone'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs2';
+        noOfImgs = 8;
+        owl = $('.owl2');
+    }
+    if(str == 'Exhibitions'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs3';
+        noOfImgs = 10;
+        owl = $('.owl3');
+    }
+    if(str == 'Robowars'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs4';
+        noOfImgs = 10;
+        owl = $('.owl4');
+    }
+    if(str == 'Competitions'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs5';
+        noOfImgs = 10;
+        owl = $('.owl5');
+    }
+    if(str == 'Technoholix'){
+        emptySpanVar = 'emptySpan';
+        collectionOfImgsVar = 'collectionOfImgs6';
+        noOfImgs = 10;
+        owl = $('.owl6');
+    }
+
+    owl.on('translate.owl.carousel', function(e) {
+        resetParas();
+        document.getElementById(emptySpanVar).style.opacity = '0%';
+        document.getElementById(emptySpanVar).style.zIndex = 0;
+    });
+
+    owl.on('translated.owl.carousel', function(e) {
+        // var paras = getChildrenOfChildOfGivenClassName('active center','discrip');
+        // for(var i=0;i<paras.length;i++){
+        //     paras[i].style.right = `0px`;    //start from its current position
+        // }
+        document.getElementById(emptySpanVar).style.zIndex = 1;
+        document.getElementById(emptySpanVar).style.opacity = '100%';
+    });
+
+
+    makeAllNone();
+    document.getElementById(collectionOfImgsVar).style.display = 'block';
+
+    document.getElementById(emptySpanVar).onmousewheel = function( e ) {
+        var scrollDirection = detectMouseWheelDirection( e );
+        if(scrollDirection=='down'){
+            owl.trigger('next.owl');
+        }else{
+            owl.trigger('prev.owl');
+        }
+    };
+
+    document.getElementById(emptySpanVar).addEventListener("mouseover", TextIn);
+    document.getElementById(emptySpanVar).addEventListener("mouseout", TextOut);
+
+    owlInit(owl).then( function(){
+        resetParas();
+
+        var rect = document.getElementsByClassName('active center')[0].getBoundingClientRect();
+        var containerRect = document.getElementsByClassName('container')[0].getBoundingClientRect();
+        document.getElementById(emptySpanVar).style.left = (rect.left - containerRect.left) + 'px';
+        document.getElementById(emptySpanVar).style.width = `${rect.right-rect.left-4}px`;
+        document.getElementById(emptySpanVar).style.height = `${highlightSize['height']-6}px`;
+        document.getElementById(emptySpanVar).style.top = (rect.top - containerRect.top) + 'px';
+    })
+}
+
+//---------------OUTSIDE-OF-MAIN-FUNCTION--------------------------------
+
+function myFunction(evt,x){
+    toggleList = document.getElementsByClassName("toggle");
+    for (i = 0; i < toggleList.length; i++) {
+        toggleList[i].className = toggleList[i].className.replace(" active", "");
+    }
+    evt.currentTarget.className += " active";
+
+    console.log(x);
+
+    //Destroy owl carousel
+    //owl.trigger('destroy.owl.carousel');
+    owl.owlCarousel('destroy');
+
+    mainFunction(x);
+}
+
+</script>
+</body>
+</html>

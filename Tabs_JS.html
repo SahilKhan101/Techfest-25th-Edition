@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  background-color: #524f4f;
+  color:#e9e9da;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid rgb(44, 42, 42);
+  background-color: #413c3c;
+  margin-bottom: 10px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #131212;
+}
+
+.tab button:hover {
+  background-color: rgb(70, 64, 64);
+}
+
+.tab button.active {
+  color: rgb(226, 213, 213);
+}
+
+.tabcontent {
+  position: absolute;
+  width:100%;
+  display: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border: 1px solid #383131;
+  background-color: #2e2c2c;
+  color: #ebe0e0;
+}
+.container{
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+p{
+  padding: 6px 12px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+
+<div class="tab">
+  <button class="tablinks active" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div class="container" id='Cont'>
+  <div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ea veritatis nemo dolorem illum libero et, ducimus voluptates, nostrum, repudiandae architecto vel numquam sit voluptate quis. Animi, totam magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet excepturi modi hic velit placeat ipsa, omnis voluptate quis corrupti. Aliquam blanditiis cupiditate quos quo? Quam doloribus error tempore obcaecati nemo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, velit. Labore nostrum soluta est ducimus exercitationem nesciunt earum impedit quaerat rerum magnam veritatis commodi eaque, voluptatibus non atque? Est, in? Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae excepturi qui modi illum velit optio sapiente! Libero tempora corporis animi ullam modi perferendis, blanditiis magnam laborum facere adipisci, provident accusantium.</p>
+  </div>
+
+  <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum reiciendis maiores dolore perferendis, voluptatibus accusantium iure! Praesentium quam non aliquam illum possimus quos, aspernatur ducimus illo iure deserunt dolores laborum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, possimus quae quasi repudiandae ab vero quidem, adipisci distinctio ut consectetur architecto fuga molestias vitae saepe voluptates odit repellat totam incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tenetur assumenda voluptates saepe voluptate voluptas autem voluptatum quia est velit magni, explicabo obcaecati quibusdam deleniti officiis quae esse eum repellat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque vel, quas unde temporibus sunt perspiciatis numquam. Recusandae, asperiores, quae vero dolorem ipsam repellat, quis impedit a architecto libero autem quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nihil deserunt molestiae earum. Eligendi, ab. In delectus, quisquam esse ullam velit quia reprehenderit minima deserunt et corrupti ducimus, exercitationem nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nostrum minima sed? Ab, beatae in. Cumque, necessitatibus magnam ratione et eligendi voluptatum rem consectetur consequatur? Magni accusantium rem eos eveniet! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio laborum doloremque error voluptatum eius repellendus. Illo, cumque sit labore cupiditate id, illum, sint est quaerat error placeat possimus praesentium autem.</p> 
+  </div>
+
+  <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan. Lorem ipsum dolor sit amet consectetur adipisicing elit. At aut, magni soluta eligendi voluptatibus accusamus sapiente ullam provident, est earum totam officia voluptate, quaerat dolor. Ab voluptatibus architecto perspiciatis expedita. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat quae nemo facilis modi vel eaque molestias minima, praesentium adipisci numquam beatae impedit enim alias delectus aperiam. Illum in earum impedit! lo</p>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  document.getElementById('London').style.display = "block"; 
+  yh = document.getElementById('London').offsetHeight + 15;
+  document.getElementById('Cont').style.height = yh+'px';
+})();
+
+var PrefOrder = {
+  London: 1,
+  Paris: 2,
+  Tokyo: 3
+};
+
+
+var preTab = 'London';
+
+
+function openCity(evt, cityName) {
+
+  tablinks = document.getElementsByClassName("tablinks");
+  str = tablinks[PrefOrder[cityName]-1].className;
+  if(str.search('active') != -1){return;}
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  let id = null;
+  const elem = document.getElementById(cityName);  
+  const preElem = document.getElementById(preTab); 
+
+  yh = elem.offsetHeight + preElem.offsetHeight + 15;
+  document.getElementById('Cont').style.height = yh+'px';
+
+  if(PrefOrder[cityName]>PrefOrder[preTab]){
+    let pos = preElem.offsetHeight;
+    let prePos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 0.0001);
+    function frame() {
+      for(var i=0;i<5;i++){   //To control speed no. can be changed
+        if (pos == 0) {
+          clearInterval(id);
+        } else {
+          pos--; 
+          prePos--; 
+          elem.style.top = pos + "px"; 
+          preElem.style.top = prePos + "px";
+          elem.style.opacity=(preElem.offsetHeight-pos)/preElem.offsetHeight;
+          preElem.style.opacity=1-(preElem.offsetHeight-pos)/preElem.offsetHeight;
+        }
+      }
+    }
+  }
+  else{
+    let pos = -elem.offsetHeight;
+    let prePos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 2);
+    function frame() {
+      for(var i=0;i<5;i++){   //To control speed no. can be changed
+        if (pos == 0) {
+          clearInterval(id);
+        } else {
+          pos++; 
+          prePos++; 
+          elem.style.top = pos + "px"; 
+          preElem.style.top = prePos + "px";
+          elem.style.opacity=(pos+elem.offsetHeight)/elem.offsetHeight;
+          preElem.style.opacity=1-(pos+elem.offsetHeight)/elem.offsetHeight;
+        }
+      }
+    }
+  }
+  
+  //tabcontent[PrefOrder[preTab]-1].style.display = "none";
+  preTab = cityName;
+}
+
+</script>
+   
+</body>
+</html> 
